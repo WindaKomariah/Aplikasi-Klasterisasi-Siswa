@@ -21,366 +21,366 @@ ACTIVE_BUTTON_BORDER_COLOR = "#FFD700"
 ID_COLS = ["No", "Nama", "JK", "Kelas"]
 NUMERIC_COLS = ["Rata Rata Nilai Akademik", "Kehadiran"]
 CATEGORICAL_COLS = ["Ekstrakurikuler Komputer", "Ekstrakurikuler Pertanian",
-                    "Ekstrakurikuler Menjahit", "Ekstrakurikuler Pramuka"]
+"Ekstrakurikuler Menjahit", "Ekstrakurikuler Pramuka"]
 ALL_FEATURES_FOR_CLUSTERING = NUMERIC_COLS + CATEGORICAL_COLS
 
 # --- CUSTOM CSS & HEADER ---
 custom_css = f"""
 <style>
 .stApp {{
-    background-color: {BACKGROUND_COLOR};
-    color: {TEXT_COLOR};
-    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+background-color: {BACKGROUND_COLOR};
+color: {TEXT_COLOR};
+font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }}
 .main .block-container {{
-    padding-top: 7.5rem;
-    padding-right: 4rem;
-    padding-left: 4rem;
-    padding-bottom: 3rem;
-    max-width: 1200px;
-    margin: auto;
+padding-top: 7.5rem;
+padding-right: 4rem;
+padding-left: 4rem;
+padding-bottom: 3rem;
+max-width: 1200px;
+margin: auto;
 }}
 [data-testid="stVerticalBlock"] > div:not(:last-child),
 [data-testid="stHorizontalBlock"] > div:not(:last-child) {{
-    margin-bottom: 0.5rem !important;
-    padding-bottom: 0px !important;
+margin-bottom: 0.5rem !important;
+padding-bottom: 0px !important;
 }}
 .stVerticalBlock, .stHorizontalBlock {{
-    gap: 1rem !important;
+gap: 1rem !important;
 }}
 h1, h2, h3, h4, h5, h6 {{
-    margin-top: 1.5rem !important;
-    margin-bottom: 0.8rem !important;
-    padding-top: 0rem !important;
-    padding-bottom: 0rem !important;
-    color: {PRIMARY_COLOR};
-    font-weight: 600;
+margin-top: 1.5rem !important;
+margin-bottom: 0.8rem !important;
+padding-top: 0rem !important;
+padding-bottom: 0rem !important;
+color: {PRIMARY_COLOR};
+font-weight: 600;
 }}
 h1 {{ font-size: 2.5em; }}
 h2 {{ font-size: 2em; }}
 h3 {{ font-size: 1.5em; }}
 .stApp > div > div:first-child > div:nth-child(2) [data-testid="stText"] {{
-    margin-top: 0.5rem !important;
-    margin-bottom: 1rem !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    font-size: 0.95em;
-    color: #666666;
+margin-top: 0.5rem !important;
+margin-bottom: 1rem !important;
+padding-top: 0 !important;
+padding-bottom: 0 !important;
+font-size: 0.95em;
+color: #666666;
 }}
 .stApp > div > div:first-child > div:nth-child(3) h1:first-child,
 .stApp > div > div:first-child > div:nth-child(3) h2:first-child,
 .stApp > div > div:first-child > div:nth-child(3) h3:first-child
 {{
-    margin-top: 1rem !important;
+margin-top: 1rem !important;
 }}
 .stApp > div > div:first-child > div:nth-child(3) [data-testid="stAlert"]:first-child {{
-    margin-top: 1.2rem !important;
+margin-top: 1.2rem !important;
 }}
 [data-testid="stSidebar"] {{
-    background-color: {PRIMARY_COLOR};
-    color: #ffffff;
-    padding-top: 2.5rem;
+background-color: {PRIMARY_COLOR};
+color: #ffffff;
+padding-top: 2.5rem;
 }}
 [data-testid="stSidebar"] * {{
-    color: #ffffff;
+color: #ffffff;
 }}
 [data-testid="stSidebar"] .stButton > button {{
-    background-color: {PRIMARY_COLOR} !important;
-    color: white !important;
-    border: none !important;
-    padding: 12px 25px !important;
-    text-align: left !important;
-    width: 100% !important;
-    font-size: 17px !important;
-    font-weight: 500 !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
-    transition: background-color 0.2s, color 0.2s, border-left 0.2s, box-shadow 0.2s;
-    display: flex !important;
-    justify-content: flex-start !important;
-    align-items: center;
-    gap: 10px;
+background-color: {PRIMARY_COLOR} !important;
+color: white !important;
+border: none !important;
+padding: 12px 25px !important;
+text-align: left !important;
+width: 100% !important;
+font-size: 17px !important;
+font-weight: 500 !important;
+margin: 0 !important;
+border-radius: 0 !important;
+transition: background-color 0.2s, color 0.2s, border-left 0.2s, box-shadow 0.2s;
+display: flex !important;
+justify-content: flex-start !important;
+align-items: center;
+gap: 10px;
 }}
 [data-testid="stSidebar"] .stButton > button:hover {{
-    background-color: {SIDEBAR_HIGHLIGHT_COLOR} !important;
-    color: #e0e0e0 !important;
+background-color: {SIDEBAR_HIGHLIGHT_COLOR} !important;
+color: #e0e0e0 !important;
 }}
 [data-testid="stSidebar"] [data-testid="stButton"] {{
-    margin-bottom: 0px !important;
-    padding: 0px !important;
+margin-bottom: 0px !important;
+padding: 0px !important;
 }}
 [data-testid="stSidebar"] [data-testid="stVerticalBlock"] > div {{
-    margin-bottom: 0px !important;
+margin-bottom: 0px !important;
 }}
 [data-testid="stSidebar"] .st-sidebar-button-active {{
-    background-color: {ACTIVE_BUTTON_BG_COLOR} !important;
-    color: {ACTIVE_BUTTON_TEXT_COLOR} !important;
-    border-left: 6px solid {ACTIVE_BUTTON_BORDER_COLOR} !important;
-    box-shadow: inset 4px 0 10px rgba(0,0,0,0.4) !important;
+background-color: {ACTIVE_BUTTON_BG_COLOR} !important;
+color: {ACTIVE_BUTTON_TEXT_COLOR} !important;
+border-left: 6px solid {ACTIVE_BUTTON_BORDER_COLOR} !important;
+box-shadow: inset 4px 0 10px rgba(0,0,0,0.4) !important;
 }}
 [data-testid="stSidebar"] .st-sidebar-button-active > button {{
-    background-color: {ACTIVE_BUTTON_BG_COLOR} !important;
-    color: {ACTIVE_BUTTON_TEXT_COLOR} !important;
-    font-weight: 700 !important;
+background-color: {ACTIVE_BUTTON_BG_COLOR} !important;
+color: {ACTIVE_BUTTON_TEXT_COLOR} !important;
+font-weight: 700 !important;
 }}
 [data-testid="stSidebar"] .stButton > button:not(.st-sidebar-button-active) {{
-    border-left: 6px solid transparent !important;
-    box-shadow: none !important;
+border-left: 6px solid transparent !important;
+box-shadow: none !important;
 }}
 .custom-header {{
-    background-color: {HEADER_BACKGROUND_COLOR};
-    padding: 25px 40px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    margin: 0 !important;
+background-color: {HEADER_BACKGROUND_COLOR};
+padding: 25px 40px;
+color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-radius: 0;
+box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+position: sticky;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+margin: 0 !important;
 }}
 .custom-header h1 {{
-    margin: 0 !important;
-    font-size: 32px;
-    font-weight: bold;
-    color: white;
+margin: 0 !important;
+font-size: 32px;
+font-weight: bold;
+color: white;
 }}
 .custom-header .kanan {{
-    font-weight: 600;
-    font-size: 19px;
-    color: white;
-    opacity: 0.9;
-    text-align: right;
+font-weight: 600;
+font-size: 19px;
+color: white;
+opacity: 0.9;
+text-align: right;
 }}
 @media (max-width: 768px) {{
-    .custom-header {{
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px 20px;
-        text-align: left;
-    }}
-    .custom-header h1 {{
-        font-size: 24px;
-        margin-bottom: 5px !important;
-    }}
-    .custom-header .kanan {{
-        font-size: 14px;
-        text-align: left;
-    }}
-    .main .block-container {{
-        padding-top: 10rem;
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }}
+.custom-header {{
+flex-direction: column;
+align-items: flex-start;
+padding: 15px 20px;
+text-align: left;
+}}
+.custom-header h1 {{
+font-size: 24px;
+margin-bottom: 5px !important;
+}}
+.custom-header .kanan {{
+font-size: 14px;
+text-align: left;
+}}
+.main .block-container {{
+padding-top: 10rem;
+padding-right: 1rem;
+padding-left: 1rem;
+}}
 }}
 .stAlert {{
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 20px !important;
-    margin-top: 20px !important;
-    font-size: 0.95em;
-    line-height: 1.5;
+border-radius: 10px;
+padding: 15px;
+margin-bottom: 20px !important;
+margin-top: 20px !important;
+font-size: 0.95em;
+line-height: 1.5;
 }}
 .stAlert.info {{
-    background-color: #e3f2fd;
-    color: #1976D2;
-    border-left: 6px solid #2196F3;
+background-color: #e3f2fd;
+color: #1976D2;
+border-left: 6px solid #2196F3;
 }}
 .stAlert.success {{
-    background-color: #e8f5e9;
-    color: #388E3C;
-    border-left: 6px solid #4CAF50;
+background-color: #e8f5e9;
+color: #388E3C;
+border-left: 6px solid #4CAF50;
 }}
 .stAlert.warning {{
-    background-color: #fffde7;
-    color: #FFA000;
-    border-left: 6px solid #FFC107;
+background-color: #fffde7;
+color: #FFA000;
+border-left: 6px solid #FFC107;
 }}
 .stAlert.error {{
-    background-color: #ffebee;
-    color: #D32F2F;
-    border-left: 6px solid #F44336;
+background-color: #ffebee;
+color: #D32F2F;
+border-left: 6px solid #F44336;
 }}
 .stForm {{
-    background-color: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-top: 25px !important;
-    margin-bottom: 25px !important;
-    border: 1px solid #e0e0e0;
+background-color: white;
+padding: 25px;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+margin-top: 25px !important;
+margin-bottom: 25px !important;
+border: 1px solid #e0e0e0;
 }}
 .stDataFrame, .stTable {{
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    margin-top: 30px !important;
-    margin-bottom: 30px !important;
-    border: 1px solid #e0e0e0;
+border-radius: 10px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+margin-top: 30px !important;
+margin-bottom: 30px !important;
+border: 1px solid #e0e0e0;
 }}
 .stTable table th {{
-    background-color: #f5f5f5 !important;
-    color: {PRIMARY_COLOR} !important;
-    font-weight: bold;
+background-color: #f5f5f5 !important;
+color: {PRIMARY_COLOR} !important;
+font-weight: bold;
 }}
 .stTable table td {{
-    padding: 8px 12px !important;
+padding: 8px 12px !important;
 }}
 .stButton > button {{
-    background-color: {ACCENT_COLOR};
-    color: white;
-    padding: 10px 25px;
-    border-radius: 8px;
-    border: none;
-    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
-    margin-top: 15px !important;
-    margin-bottom: 8px !important;
-    font-weight: 600;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+background-color: {ACCENT_COLOR};
+color: white;
+padding: 10px 25px;
+border-radius: 8px;
+border: none;
+transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+margin-top: 15px !important;
+margin-bottom: 8px !important;
+font-weight: 600;
+box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }}
 .stButton > button:hover {{
-    background-color: {PRIMARY_COLOR};
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+background-color: {PRIMARY_COLOR};
+color: white;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0,0,0,0.25);
 }}
 .stButton > button:active {{
-    transform: translateY(0);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+transform: translateY(0);
+box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }}
 .stTextInput > div > div > input,
 .stNumberInput > div > div > input,
 .stDateInput > div > div > input,
 .stTimeInput > div > div > input {{
-    border-radius: 8px;
-    border: 1px solid #D1D1D1;
-    padding: 10px 15px;
-    margin-bottom: 8px !important;
-    margin-top: 8px !important;
-    background-color: white;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+border-radius: 8px;
+border: 1px solid #D1D1D1;
+padding: 10px 15px;
+margin-bottom: 8px !important;
+margin-top: 8px !important;
+background-color: white;
+box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
 }}
 .stTextInput label, .stNumberInput label, .stSelectbox label, .stCheckbox label, .stRadio label {{
-    margin-bottom: 5px !important;
-    padding-bottom: 0px !important;
-    font-size: 0.98em;
-    font-weight: 500;
-    color: {TEXT_COLOR};
+margin-bottom: 5px !important;
+padding-bottom: 0px !important;
+font-size: 0.98em;
+font-weight: 500;
+color: {TEXT_COLOR};
 }}
 div[data-testid="stSelectbox"] > div:first-child {{
-    width: 480px;
-    min-width: 300px;
+width: 480px;
+min-width: 300px;
 }}
 div[data-testid="stSelectbox"] > div > div > div > div[role="button"] {{
-    width: 100% !important;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: flex;
-    align-items: center;
-    height: auto;
-    box-sizing: border-box;
-    padding-right: 35px;
+width: 100% !important;
+white-space: normal;
+overflow: hidden;
+text-overflow: ellipsis;
+display: flex;
+align-items: center;
+height: auto;
+box-sizing: border-box;
+padding-right: 35px;
 }}
 div[role="listbox"][aria-orientation="vertical"] {{
-    width: 500px !important;
-    max-width: 600px !important;
-    min-width: 400px !important;
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-    box-sizing: border-box;
-    border-radius: 8px;
-    border: 1px solid #D1D1D1;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    background-color: white;
+width: 500px !important;
+max-width: 600px !important;
+min-width: 400px !important;
+overflow-x: hidden !important;
+overflow-y: auto !important;
+box-sizing: border-box;
+border-radius: 8px;
+border: 1px solid #D1D1D1;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+background-color: white;
 }}
 div[role="option"] {{
-    white-space: normal !important;
-    word-wrap: break-word !important;
-    padding-right: 15px !important;
-    padding-left: 15px !important;
-    line-height: 1.4;
-    min-height: 38px;
-    display: flex;
-    align-items: center;
+white-space: normal !important;
+word-wrap: break-word !important;
+padding-right: 15px !important;
+padding-left: 15px !important;
+line-height: 1.4;
+min-height: 38px;
+display: flex;
+align-items: center;
 }}
 div[role="option"]:hover {{
-    background-color: #e0e0e0;
-    color: {PRIMARY_COLOR};
+background-color: #e0e0e0;
+color: {PRIMARY_COLOR};
 }}
 ::-webkit-scrollbar {{
-    width: 10px;
+width: 10px;
 }}
 ::-webkit-scrollbar-thumb {{
-    background: {ACCENT_COLOR};
-    border-radius: 5px;
+background: {ACCENT_COLOR};
+border-radius: 5px;
 }}
 ::-webkit-scrollbar-track {{
-    background: #e9e9e9;
+background: #e9e9e9;
 }}
 .stCheckbox label, .stRadio label {{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    user-select: none;
+display: flex;
+align-items: center;
+cursor: pointer;
+user-select: none;
 }}
 .stCheckbox {{
-    margin-bottom: 10px !important;
-    margin-top: 10px !important;
+margin-bottom: 10px !important;
+margin-top: 10px !important;
 }}
 .stExpander {{
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
+border: 1px solid #e0e0e0;
+border-radius: 10px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+margin-bottom: 20px;
 }}
 .stExpander > div > div > p {{
-    font-weight: 600;
-    color: {PRIMARY_COLOR};
+font-weight: 600;
+color: {PRIMARY_COLOR};
 }}
 div[data-testid="column"] {{
-    gap: 2rem;
+gap: 2rem;
 }}
 .stApp > div > div:first-child > div:nth-child(3) > div:first-child {{
-    margin-top: 0rem !important;
+margin-top: 0rem !important;
 }}
 .login-container {{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 80vh;
+text-align: center;
 }}
 .login-card {{
-    background-color: white;
-    padding: 50px 70px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    border: 1px solid #e0e0e0;
-    width: 100%;
-    max-width: 600px;
-    margin-top: 50px;
+background-color: white;
+padding: 50px 70px;
+border-radius: 15px;
+box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+border: 1px solid #e0e0e0;
+width: 100%;
+max-width: 600px;
+margin-top: 50px;
 }}
 .login-card h2 {{
-    color: {PRIMARY_COLOR};
-    font-size: 2.2em;
-    margin-bottom: 2rem;
+color: {PRIMARY_COLOR};
+font-size: 2.2em;
+margin-bottom: 2rem;
 }}
 .stButton > button {{
-    background-color: {ACCENT_COLOR};
-    color: white;
-    padding: 10px 25px;
-    border-radius: 8px;
-    border: none;
-    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
-    margin-top: 15px !important;
-    margin-bottom: 8px !important;
-    font-weight: 600;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+background-color: {ACCENT_COLOR};
+color: white;
+padding: 10px 25px;
+border-radius: 8px;
+border: none;
+transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+margin-top: 15px !important;
+margin-bottom: 8px !important;
+font-weight: 600;
+box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }}
 </style>
 """
@@ -404,11 +404,11 @@ def generate_pdf_profil_siswa(nama, data_siswa_dict, klaster, cluster_desc_map):
     pdf.set_font("Arial", "", 10)
     pdf.set_text_color(0, 0, 0)
     keterangan_umum = (
-        "Laporan ini menyajikan profil detail siswa berdasarkan hasil pengelompokan "
-        "menggunakan Algoritma K-Prototype. Klasterisasi dilakukan berdasarkan "
-        "nilai akademik, kehadiran, dan partisipasi ekstrakurikuler siswa. "
-        "Informasi klaster ini dapat digunakan untuk memahami kebutuhan siswa dan "
-        "merancang strategi pembinaan yang sesuai."
+    "Laporan ini menyajikan profil detail siswa berdasarkan hasil pengelompokan "
+    "menggunakan Algoritma K-Prototype. Klasterisasi dilakukan berdasarkan "
+    "nilai akademik, kehadiran, dan partisipasi ekstrakurikuler siswa. "
+    "Informasi klaster ini dapat digunakan untuk memahami kebutuhan siswa dan "
+    "merancang strategi pembinaan yang sesuai."
     )
     pdf.multi_cell(0, 5, keterangan_umum, align='J')
     pdf.ln(5)
@@ -430,12 +430,12 @@ def generate_pdf_profil_siswa(nama, data_siswa_dict, klaster, cluster_desc_map):
         if val is not None and (val == 1 or str(val).strip() == '1'):
             ekskul_diikuti.append(col.replace("Ekstrakurikuler ", ""))
     display_data = {
-        "Nomor Induk": data_siswa_dict.get("No", "-"),
-        "Jenis Kelamin": data_siswa_dict.get("JK", "-"),
-        "Kelas": data_siswa_dict.get("Kelas", "-"),
-        "Rata-rata Nilai Akademik": f"{data_siswa_dict.get('Rata Rata Nilai Akademik', '-'):.2f}",
-        "Persentase Kehadiran": f"{data_siswa_dict.get('Kehadiran', '-'):.2%}",
-        "Ekstrakurikuler yang Diikuti": ", ".join(ekskul_diikuti) if ekskul_diikuti else "Tidak mengikuti ekstrakurikuler",
+    "Nomor Induk": data_siswa_dict.get("No", "-"),
+    "Jenis Kelamin": data_siswa_dict.get("JK", "-"),
+    "Kelas": data_siswa_dict.get("Kelas", "-"),
+    "Rata-rata Nilai Akademik": f"{data_siswa_dict.get('Rata Rata Nilai Akademik', '-'):.2f}",
+    "Persentase Kehadiran": f"{data_siswa_dict.get('Kehadiran', '-'):.2%}",
+    "Ekstrakurikuler yang Diikuti": ", ".join(ekskul_diikuti) if ekskul_diikuti else "Tidak mengikuti ekstrakurikuler",
     }
     for key, val in display_data.items():
         pdf.cell(0, 7, f"{key}: {val}", ln=True)
@@ -480,7 +480,7 @@ def generate_cluster_descriptions(df_clustered, n_clusters, numeric_cols, catego
     cluster_characteristics_map = {}
     if 'df_original' not in st.session_state or st.session_state.df_original is None:
         return {}
-
+    df_original_numeric = st.session_state.df_original[NUMERIC_COLS]
     for i in range(n_clusters):
         cluster_data = df_clustered[df_clustered["Klaster"] == i]
         avg_scaled_values = cluster_data[numeric_cols].mean()
@@ -540,59 +540,57 @@ if 'kepsek_current_menu' not in st.session_state:
 def show_operator_tu_page():
     st.sidebar.title("MENU NAVIGASI")
     st.sidebar.markdown("---")
-
     menu_options = [
-        "Unggah Data",
-        "Praproses & Normalisasi Data",
-        "Klasterisasi Data K-Prototypes",
-        "Prediksi Klaster Siswa Baru",
-        "Visualisasi & Profil Klaster",
-        "Lihat Profil Siswa Individual"
+    "Unggah Data",
+    "Praproses & Normalisasi Data",
+    "Klasterisasi Data K-Prototypes",
+    "Prediksi Klaster Siswa Baru",
+    "Visualisasi & Profil Klaster",
+    "Lihat Profil Siswa Individual"
     ]
     if 'current_menu' not in st.session_state or st.session_state.current_menu not in menu_options:
         st.session_state.current_menu = menu_options[0]
     for option in menu_options:
         icon_map = {
-            "Unggah Data": " ⬆ ",
-            "Praproses & Normalisasi Data": " ⚙ ",
-            "Klasterisasi Data K-Prototypes": " 📊 ",
-            "Prediksi Klaster Siswa Baru": " 🔮 ",
-            "Visualisasi & Profil Klaster": " 📈 ",
-            "Lihat Profil Siswa Individual": " 👤 "
+        "Unggah Data": " ⬆ ",
+        "Praproses & Normalisasi Data": " ⚙ ",
+        "Klasterisasi Data K-Prototypes": " 📊 ",
+        "Prediksi Klaster Siswa Baru": " 🔮 ",
+        "Visualisasi & Profil Klaster": " 📈 ",
+        "Lihat Profil Siswa Individual": " 👤 "
         }
         display_name = f"{icon_map.get(option, '')} {option}"
         button_key = f"nav_button_{option.replace(' ', '_').replace('&', 'and')}"
         if st.sidebar.button(display_name, key=button_key):
             st.session_state.current_menu = option
             st.rerun()
-    # Logika untuk menandai tombol aktif
     js_highlight_active_button = f"""
     <script>
     function cleanButtonText(text) {{
-        return (text || '').replace(/\p{{Emoji}}/gu, '').trim();
+    return (text || '').replace(/\p{{Emoji}}/gu, '').trim();
     }}
     function highlightActiveSidebarButton() {{
-        var currentMenu = '{st.session_state.current_menu}';
-        var cleanCurrentMenuName = cleanButtonText(currentMenu);
-        var sidebarButtonContainers = window.parent.document.querySelectorAll('[data-testid="stSidebar"] [data-testid="stButton"]');
-        sidebarButtonContainers.forEach(function(container) {{
-            var button = container.querySelector('button');
-            if (button) {{
-                var buttonText = cleanButtonText(button.innerText || button.textContent);
-                container.classList.remove('st-sidebar-button-active');
-                if (buttonText === cleanCurrentMenuName) {{
-                    container.classList.add('st-sidebar-button-active');
-                }}
-            }}
-        }});
+    var currentMenu = '{st.session_state.current_menu}';
+    var cleanCurrentMenuName = cleanButtonText(currentMenu);
+    var sidebarButtonContainers = window.parent.document.querySelectorAll('[data-testid="stSidebar"] [data-testid="stButton"]');
+    sidebarButtonContainers.forEach(function(container) {{
+    var button = container.querySelector('button');
+    if (button) {{
+    var buttonText = cleanButtonText(button.innerText || button.textContent);
+    container.classList.remove('st-sidebar-button-active');
+    if (buttonText === cleanCurrentMenuName) {{
+    container.classList.add('st-sidebar-button-active');
+    }}
+    }}
+    }});
     }}
     const observer = new MutationObserver((mutationsList, observer) => {{
-        const sidebarChanged = mutationsList.some(mutation =>
-            mutation.target.closest('[data-testid="stSidebar"]')
-        );
-        if (sidebarChanged) {{
-            highlightActiveSidebarButton();
-        }}
+    const sidebarChanged = mutationsList.some(mutation =>
+    mutation.target.closest('[data-testid="stSidebar"]')
+    );
+    if (sidebarChanged) {{
+    highlightActiveSidebarButton();
+    }}
     }});
     observer.observe(window.parent.document.body, {{ childList: true, subtree: true }});
     highlightActiveSidebarButton();
@@ -602,9 +600,8 @@ def show_operator_tu_page():
         st.html(js_highlight_active_button)
     else:
         st.markdown(js_highlight_active_button, unsafe_allow_html=True)
-
     st.sidebar.markdown("---")
-    if st.sidebar.button(" 🚪  Keluar", key="logout_tu_sidebar"):
+    if st.sidebar.button(" 🚪 Keluar", key="logout_tu_sidebar"):
         st.session_state.clear()
         st.rerun()
     if st.session_state.current_menu == "Unggah Data":
@@ -612,7 +609,7 @@ def show_operator_tu_page():
         st.markdown("""
         <div style='background-color:#e3f2fd; padding:15px; border-radius:10px; border-left: 5px solid #2196F3;'>
         Silakan unggah file Excel (.xlsx) yang berisi dataset siswa. Pastikan file Anda memiliki
-        kolom-kolom berikut agar sistem dapat bekerja dengan baik:<br><br>
+        kolom-kolom berikut agar sistem dapat bekerja dengan baik.<br><br>
         <ul>
         <li><b>Kolom Identitas:</b> "No", "Nama", "JK", "Kelas"</li>
         <li><b>Kolom Numerik (untuk analisis):</b> "Rata Rata Nilai Akademik", "Kehadiran"</li>
@@ -676,11 +673,11 @@ def show_operator_tu_page():
             """, unsafe_allow_html=True)
             st.markdown("---")
             k = st.slider("Pilih Jumlah Klaster (K)", 2, 6, value=st.session_state.n_clusters,
-                          help="Pilih berapa banyak kelompok siswa yang ingin Anda bentuk.")
+            help="Pilih berapa banyak kelompok siswa yang ingin Anda bentuk.")
             if st.button("Jalankan Klasterisasi"):
                 with st.spinner(f"Melakukan klasterisasi dengan {k} klaster..."):
                     df_clustered, kproto_model, categorical_features_indices = run_kprototypes_clustering(
-                        st.session_state.df_preprocessed_for_clustering, k
+                    st.session_state.df_preprocessed_for_clustering, k
                     )
                     if df_clustered is not None:
                         df_final = st.session_state.df_original.copy()
@@ -690,7 +687,7 @@ def show_operator_tu_page():
                         st.session_state.categorical_features_indices = categorical_features_indices
                         st.session_state.n_clusters = k
                         st.session_state.cluster_characteristics_map = generate_cluster_descriptions(
-                            df_clustered, k, NUMERIC_COLS, CATEGORICAL_COLS
+                        df_clustered, k, NUMERIC_COLS, CATEGORICAL_COLS
                         )
                         st.success(f"Klasterisasi selesai dengan {k} klaster! Hasil pengelompokan siswa telah tersedia.")
                         st.markdown("---")
@@ -707,6 +704,14 @@ def show_operator_tu_page():
                         for cluster_id, desc in st.session_state.cluster_characteristics_map.items():
                             with st.expander(f"Klaster {cluster_id}"):
                                 st.markdown(desc)
+                        try:
+                            df_final_for_kepsek = df_final.copy()
+                            df_final_for_kepsek['Kehadiran'] = df_final_for_kepsek['Kehadiran'].apply(lambda x: f"{x:.2%}")
+                            file_name = "Data MA-ALHIKMAH.xlsx"
+                            df_final_for_kepsek.to_excel(file_name, index=False)
+                            st.success(f"Hasil klasterisasi berhasil disimpan ke file '{file_name}' untuk diakses oleh Kepala Sekolah.")
+                        except Exception as e:
+                            st.error(f"Gagal menyimpan file Excel untuk Kepala Sekolah: {e}")
     elif st.session_state.current_menu == "Prediksi Klaster Siswa Baru":
         st.header("Prediksi Klaster untuk Siswa Baru")
         if st.session_state.kproto_model is None or st.session_state.scaler is None:
@@ -747,10 +752,10 @@ def show_operator_tu_page():
                         input_numeric_data = [input_rata_nilai, input_kehadiran]
                         normalized_numeric_data = st.session_state.scaler.transform([input_numeric_data])[0]
                         new_student_data_for_prediction = np.array(
-                            list(normalized_numeric_data) + input_cat_ekskul_values, dtype=object
+                        list(normalized_numeric_data) + input_cat_ekskul_values, dtype=object
                         ).reshape(1, -1)
                         predicted_cluster = st.session_state.kproto_model.predict(
-                            new_student_data_for_prediction, categorical=st.session_state.categorical_features_indices
+                        new_student_data_for_prediction, categorical=st.session_state.categorical_features_indices
                         )
                         st.success(f"Prediksi Klaster: Siswa Baru Ini Masuk ke Klaster {predicted_cluster[0]}!")
                         st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
@@ -774,8 +779,8 @@ def show_operator_tu_page():
                         ax.set_ylim(min(values_for_plot) - 0.2 if values_for_plot else -1, max(values_for_plot) + 0.2 if values_for_plot else 1)
                         for index, value in enumerate(values_for_plot):
                             ax.text(bars.patches[index].get_x() + bars.patches[index].get_width() / 2,
-                                    bars.patches[index].get_height() + (0.05 if value >= 0 else -0.1),
-                                    f"{value:.2f}", ha='center', fontsize=9, weight='bold')
+                            bars.patches[index].get_height() + (0.05 if value >= 0 else -0.1),
+                            f"{value:.2f}", ha='center', fontsize=9, weight='bold')
                         ax.set_title("Profil Siswa Baru", fontsize=16, weight='bold')
                         ax.set_ylabel("Nilai (Dinormalisasi / Biner)")
                         plt.xticks(rotation=0)
@@ -798,13 +803,13 @@ def show_operator_tu_page():
             """, unsafe_allow_html=True)
             st.markdown("---")
             k_visual = st.slider("Jumlah Klaster (K) untuk visualisasi", 2, 6, value=st.session_state.n_clusters,
-                                 help="Geser untuk memilih jumlah klaster yang ingin Anda visualisasikan. Ini akan melatih ulang model sementara untuk tujuan visualisasi.")
+            help="Geser untuk memilih jumlah klaster yang ingin Anda visualisasikan. Ini akan melatih ulang model sementara untuk tujuan visualisasi.")
             df_for_visual_clustering, kproto_visual, cat_indices_visual = run_kprototypes_clustering(
-                st.session_state.df_preprocessed_for_clustering, k_visual
+            st.session_state.df_preprocessed_for_clustering, k_visual
             )
             if df_for_visual_clustering is not None:
                 cluster_characteristics_map_visual = generate_cluster_descriptions(
-                    df_for_visual_clustering, k_visual, NUMERIC_COLS, CATEGORICAL_COLS
+                df_for_visual_clustering, k_visual, NUMERIC_COLS, CATEGORICAL_COLS
                 )
                 st.markdown(f"### Menampilkan Profil Klaster untuk K = {k_visual}")
                 st.write("Visualisasi ini menggunakan data yang telah dinormalisasi (nilai, kehadiran) atau dikodekan (ekstrakurikuler 0/1).")
@@ -826,7 +831,7 @@ def show_operator_tu_page():
                         st.info(f"Ringkasan Karakteristik Klaster {i}:\n{cluster_characteristics_map_visual.get(i, 'Deskripsi tidak tersedia.')}")
                     with col2:
                         st.markdown("#### Grafik Profil Klaster")
-                        st.write(" 📈  Visualisasi ini menunjukkan rata-rata (numerik) atau modus (kategorikal) dari fitur-fitur di klaster ini.")
+                        st.write(" 📈 Visualisasi ini menunjukkan rata-rata (numerik) atau modus (kategorikal) dari fitur-fitur di klaster ini.")
                         values_for_plot_numeric = cluster_data[NUMERIC_COLS].mean().tolist()
                         values_for_plot_ekskul = [int(cluster_data[col].mode().iloc[0]) for col in CATEGORICAL_COLS]
                         values_for_plot = values_for_plot_numeric + values_for_plot_ekskul
@@ -842,7 +847,7 @@ def show_operator_tu_page():
                         plt.xticks(rotation=0)
                         plt.tight_layout()
                         st.pyplot(fig)
-                        st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
+                st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
     elif st.session_state.current_menu == "Lihat Profil Siswa Individual":
         st.header("Lihat Profil Siswa Berdasarkan Nama")
         if st.session_state.df_clustered is None or st.session_state.df_original is None or st.session_state.df_original.empty:
@@ -858,11 +863,11 @@ def show_operator_tu_page():
                 except ValueError:
                     default_index = 0
             nama_terpilih = st.selectbox(
-                "Pilih Nama Siswa",
-                df_original_with_cluster["Nama"].unique(),
-                index=default_index,
-                key="pilih_nama_siswa_selectbox_tu",
-                help="Pilih siswa yang profilnya ingin Anda lihat."
+            "Pilih Nama Siswa",
+            df_original_with_cluster["Nama"].unique(),
+            index=default_index,
+            key="pilih_nama_siswa_selectbox_tu",
+            help="Pilih siswa yang profilnya ingin Anda lihat."
             )
             st.session_state.selected_student_name = nama_terpilih
             if nama_terpilih:
@@ -894,19 +899,19 @@ def show_operator_tu_page():
                             ekskul_diikuti_str.append(col.replace("Ekstrakurikuler ", ""))
                     if ekskul_diikuti_str:
                         for ekskul in ekskul_diikuti_str:
-                            st.markdown(f"- {ekskul}  ✅ ")
+                            st.markdown(f"- {ekskul} ✅ ")
                     else:
-                        st.markdown("Tidak mengikuti ekstrakurikuler  ❌ ")
+                        st.markdown("Tidak mengikuti ekstrakurikuler ❌ ")
                 with col_chart:
                     st.markdown("#### Visualisasi Profil Siswa Individual")
                     st.write("Grafik ini menampilkan nilai asli (tidak dinormalisasi) untuk rata-rata nilai akademik dan persentase kehadiran (0-100%), serta status biner (0/1) untuk ekstrakurikuler.")
                     labels_siswa_plot = ["Rata-rata\nNilai Akademik", "Kehadiran (%)"] + [col.replace("Ekstrakurikuler ", "Ekskul\n") for col in CATEGORICAL_COLS]
                     values_siswa_plot_numeric = [
-                        siswa_data["Rata Rata Nilai Akademik"],
-                        siswa_data["Kehadiran"] * 100
+                    siswa_data["Rata Rata Nilai Akademik"],
+                    siswa_data["Kehadiran"] * 100
                     ]
                     values_siswa_plot_ekskul = [
-                        siswa_data[col] * 100 for col in CATEGORICAL_COLS
+                    siswa_data[col] * 100 for col in CATEGORICAL_COLS
                     ]
                     values_siswa_plot = values_siswa_plot_numeric + values_siswa_plot_ekskul
                     fig, ax = plt.subplots(figsize=(10, 6))
@@ -923,8 +928,8 @@ def show_operator_tu_page():
                 st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)
                 st.subheader(f"Siswa Lain di Klaster {klaster_siswa_terpilih}:")
                 siswa_lain_di_klaster = df_original_with_cluster[
-                    (df_original_with_cluster['Klaster'] == klaster_siswa_terpilih) &
-                    (df_original_with_cluster['Nama'] != nama_terpilih)
+                (df_original_with_cluster['Klaster'] == klaster_siswa_terpilih) &
+                (df_original_with_cluster['Nama'] != nama_terpilih)
                 ]
                 if not siswa_lain_di_klaster.empty:
                     st.write("Berikut adalah daftar siswa lain yang juga tergolong dalam klaster ini:")
@@ -941,62 +946,61 @@ def show_operator_tu_page():
                         with st.spinner("Menyiapkan laporan PDF..."):
                             siswa_data_for_pdf = siswa_data.drop(labels=["Klaster"]).to_dict()
                             pdf_data_bytes = generate_pdf_profil_siswa(
-                                nama_terpilih,
-                                siswa_data_for_pdf,
-                                siswa_data["Klaster"],
-                                st.session_state.cluster_characteristics_map
+                            nama_terpilih,
+                            siswa_data_for_pdf,
+                            siswa_data["Klaster"],
+                            st.session_state.cluster_characteristics_map
                             )
                             if pdf_data_bytes:
                                 st.success("Laporan PDF berhasil disiapkan!")
                                 st.download_button(
-                                    label="Klik di Sini untuk Mengunduh PDF",
-                                    data=pdf_data_bytes,
-                                    file_name=f"Profil_{nama_terpilih.replace(' ', '_')}.pdf",
-                                    mime="application/pdf",
-                                    key="download_profile_pdf_tu_final",
-                                    help="Klik ini untuk menyimpan laporan PDF ke perangkat Anda."
+                                label="Klik di Sini untuk Mengunduh PDF",
+                                data=pdf_data_bytes,
+                                file_name=f"Profil_{nama_terpilih.replace(' ', '_')}.pdf",
+                                mime="application/pdf",
+                                key="download_profile_pdf_tu_final",
+                                help="Klik ini untuk menyimpan laporan PDF ke perangkat Anda."
                                 )
                 else:
                     st.warning("Mohon lakukan klasterisasi terlebih dahulu (Menu 'Klasterisasi Data K-Prototypes') untuk menghasilkan data profil PDF.")
 def show_kepala_sekolah_page():
-    if 'df_clustered' not in st.session_state or st.session_state.df_clustered is None or st.session_state.df_clustered.empty:
-        st.warning("Data klasterisasi tidak ditemukan. Mohon minta Operator TU untuk memproses data dan melakukan klasterisasi terlebih dahulu.")
-        return
-
-    df_kepsek_load = st.session_state.df_clustered
-    
-    if 'df_original' not in st.session_state or st.session_state.df_original is None:
-        st.info("Memulihkan data asli dari hasil klasterisasi...")
-        df_original_from_clustered = df_kepsek_load.copy()
-        if 'Kehadiran' in df_original_from_clustered.columns and df_original_from_clustered['Kehadiran'].dtype == 'object':
-            df_original_from_clustered['Kehadiran'] = df_original_from_clustered['Kehadiran'].str.rstrip('%').astype('float') / 100
-        st.session_state.df_original = df_original_from_clustered.drop(columns=['Klaster'], errors='ignore')
-    
-    n_clusters_kepsek = len(df_kepsek_load['Klaster'].unique())
-    st.session_state.n_clusters = n_clusters_kepsek
-
-    df_preprocessed, scaler = preprocess_data(st.session_state.df_original)
-    if df_preprocessed is not None:
-        df_preprocessed['Klaster'] = df_kepsek_load['Klaster']
-        st.session_state.cluster_characteristics_map = generate_cluster_descriptions(
-            df_preprocessed, n_clusters_kepsek, NUMERIC_COLS, CATEGORICAL_COLS
-        )
-
+    file_path = "Data MA-ALHIKMAH.xlsx"
+    df_kepsek_load = None
+    if os.path.exists(file_path):
+        try:
+            df_kepsek_load = pd.read_excel(file_path, engine='openpyxl')
+            st.session_state.df_clustered = df_kepsek_load
+            if 'df_original' not in st.session_state or st.session_state.df_original is None:
+                df_original_from_clustered = df_kepsek_load.copy()
+                if df_original_from_clustered['Kehadiran'].dtype == 'object':
+                    df_original_from_clustered['Kehadiran'] = df_original_from_clustered['Kehadiran'].str.rstrip('%').astype('float') / 100
+                st.session_state.df_original = df_original_from_clustered.drop(columns=['Klaster'], errors='ignore')
+            n_clusters_kepsek = len(df_kepsek_load['Klaster'].unique())
+            st.session_state.n_clusters = n_clusters_kepsek
+            if not st.session_state.cluster_characteristics_map: # Check if map is empty
+                df_preprocessed, scaler = preprocess_data(st.session_state.df_original)
+                if df_preprocessed is not None:
+                    df_preprocessed['Klaster'] = df_kepsek_load['Klaster']
+                    st.session_state.cluster_characteristics_map = generate_cluster_descriptions(
+                    df_preprocessed, n_clusters_kepsek, NUMERIC_COLS, CATEGORICAL_COLS
+                    )
+        except Exception as e:
+            st.error(f"Terjadi kesalahan saat membaca file '{file_path}': {e}.")
+            st.session_state.df_clustered = None
     st.sidebar.title("MENU NAVIGASI")
     st.sidebar.markdown("---")
-
     kepsek_menu_options = [
-        "Lihat Hasil Klasterisasi",
-        "Visualisasi & Profil Klaster",
-        "Lihat Profil Siswa Individual"
+    "Lihat Hasil Klasterisasi",
+    "Visualisasi & Profil Klaster",
+    "Lihat Profil Siswa Individual"
     ]
     if 'kepsek_current_menu' not in st.session_state:
         st.session_state.kepsek_current_menu = kepsek_menu_options[0]
     for option in kepsek_menu_options:
         icon_map = {
-            "Lihat Hasil Klasterisasi": " 📋 ",
-            "Visualisasi & Profil Klaster": " 📈 ",
-            "Lihat Profil Siswa Individual": " 👤 "
+        "Lihat Hasil Klasterisasi": " 📋 ",
+        "Visualisasi & Profil Klaster": " 📈 ",
+        "Lihat Profil Siswa Individual": " 👤 "
         }
         display_name = f"{icon_map.get(option, '')} {option}"
         button_key = f"kepsek_nav_button_{option.replace(' ', '_').replace('&', 'and')}"
@@ -1006,30 +1010,30 @@ def show_kepala_sekolah_page():
     js_highlight_active_button = f"""
     <script>
     function cleanButtonText(text) {{
-        return (text || '').replace(/\p{{Emoji}}/gu, '').trim();
+    return (text || '').replace(/\p{{Emoji}}/gu, '').trim();
     }}
     function highlightActiveSidebarButton() {{
-        var currentMenu = '{st.session_state.kepsek_current_menu}';
-        var cleanCurrentMenuName = cleanButtonText(currentMenu);
-        var sidebarButtonContainers = window.parent.document.querySelectorAll('[data-testid="stSidebar"] [data-testid="stButton"]');
-        sidebarButtonContainers.forEach(function(container) {{
-            var button = container.querySelector('button');
-            if (button) {{
-                var buttonText = cleanButtonText(button.innerText || button.textContent);
-                container.classList.remove('st-sidebar-button-active');
-                if (buttonText === cleanCurrentMenuName) {{
-                    container.classList.add('st-sidebar-button-active');
-                }}
-            }}
-        }});
+    var currentMenu = '{st.session_state.kepsek_current_menu}';
+    var cleanCurrentMenuName = cleanButtonText(currentMenu);
+    var sidebarButtonContainers = window.parent.document.querySelectorAll('[data-testid="stSidebar"] [data-testid="stButton"]');
+    sidebarButtonContainers.forEach(function(container) {{
+    var button = container.querySelector('button');
+    if (button) {{
+    var buttonText = cleanButtonText(button.innerText || button.textContent);
+    container.classList.remove('st-sidebar-button-active');
+    if (buttonText === cleanCurrentMenuName) {{
+    container.classList.add('st-sidebar-button-active');
+    }}
+    }}
+    }});
     }}
     const observer = new MutationObserver((mutationsList, observer) => {{
-        const sidebarChanged = mutationsList.some(mutation =>
-            mutation.target.closest('[data-testid="stSidebar"]')
-        );
-        if (sidebarChanged) {{
-            highlightActiveSidebarButton();
-        }}
+    const sidebarChanged = mutationsList.some(mutation =>
+    mutation.target.closest('[data-testid="stSidebar"]')
+    );
+    if (sidebarChanged) {{
+    highlightActiveSidebarButton();
+    }}
     }});
     observer.observe(window.parent.document.body, {{ childList: true, subtree: true }});
     highlightActiveSidebarButton();
@@ -1039,14 +1043,14 @@ def show_kepala_sekolah_page():
         st.html(js_highlight_active_button)
     else:
         st.markdown(js_highlight_active_button, unsafe_allow_html=True)
-
     st.sidebar.markdown("---")
-    if st.sidebar.button(" 🚪  Keluar", key="logout_kepsek_sidebar"):
+    if st.sidebar.button(" 🚪 Keluar", key="logout_kepsek_sidebar"):
         st.session_state.clear()
         st.rerun()
-
-    st.title(" 👨‍💼  Dasbor Kepala Sekolah")
-
+    st.title(" 👨 ‍ 💼 Dasbor Kepala Sekolah")
+    if st.session_state.df_clustered is None or st.session_state.df_clustered.empty:
+        st.warning(f"File hasil klasterisasi 'Data MA-ALHIKMAH.xlsx' tidak ditemukan atau tidak valid. Mohon minta Operator TU untuk memproses dan menyimpan hasilnya terlebih dahulu.")
+        return
     if st.session_state.kepsek_current_menu == "Lihat Hasil Klasterisasi":
         st.header("Hasil Klasterisasi Siswa")
         st.info("Halaman ini menampilkan data siswa yang sudah dikelompokkan ke dalam klaster.")
@@ -1089,7 +1093,7 @@ def show_kepala_sekolah_page():
                 st.info(f"Ringkasan Karakteristik Klaster {i}:\n{st.session_state.cluster_characteristics_map.get(i, 'Deskripsi tidak tersedia.')}")
             with col2:
                 st.markdown("#### Grafik Profil Klaster")
-                st.write(" 📈  Visualisasi ini menunjukkan rata-rata (numerik) atau modus (kategorikal) dari fitur-fitur di klaster ini.")
+                st.write(" 📈 Visualisasi ini menunjukkan rata-rata (numerik) atau modus (kategorikal) dari fitur-fitur di klaster ini.")
                 if df_preprocessed_temp is not None:
                     values_for_plot_numeric = cluster_data_norm[NUMERIC_COLS].mean().tolist()
                     values_for_plot_ekskul = [int(cluster_data_norm[col].mode().iloc[0]) for col in CATEGORICAL_COLS]
@@ -1106,7 +1110,7 @@ def show_kepala_sekolah_page():
                     plt.xticks(rotation=0)
                     plt.tight_layout()
                     st.pyplot(fig)
-                    st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
+            st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
     elif st.session_state.kepsek_current_menu == "Lihat Profil Siswa Individual":
         st.header("Lihat Profil Siswa Berdasarkan Nama")
         st.info("Pilih nama siswa dari daftar di bawah untuk melihat detail profil mereka, termasuk klaster tempat mereka berada dan karakteristiknya.")
@@ -1119,11 +1123,11 @@ def show_kepala_sekolah_page():
             except ValueError:
                 default_index = 0
         nama_terpilih_kepsek = st.selectbox(
-            "Pilih Nama Siswa",
-            df_kepsek["Nama"].unique(),
-            index=default_index,
-            key="pilih_nama_siswa_kepsek",
-            help="Pilih siswa yang profilnya ingin Anda lihat."
+        "Pilih Nama Siswa",
+        df_kepsek["Nama"].unique(),
+        index=default_index,
+        key="pilih_nama_siswa_kepsek",
+        help="Pilih siswa yang profilnya ingin Anda lihat."
         )
         st.session_state.selected_student_name_kepsek = nama_terpilih_kepsek
         if nama_terpilih_kepsek:
@@ -1154,19 +1158,19 @@ def show_kepala_sekolah_page():
                         ekskul_diikuti_str.append(col.replace("Ekstrakurikuler ", ""))
                 if ekskul_diikuti_str:
                     for ekskul in ekskul_diikuti_str:
-                        st.markdown(f"- {ekskul}  ✅ ")
+                        st.markdown(f"- {ekskul} ✅ ")
                 else:
-                    st.markdown("Tidak mengikuti ekstrakurikuler  ❌ ")
+                    st.markdown("Tidak mengikuti ekstrakurikuler ❌ ")
             with col_chart:
                 st.markdown("#### Visualisasi Profil Siswa Individual")
                 st.write("Grafik ini menampilkan nilai asli (tidak dinormalisasi) untuk rata-rata nilai akademik dan persentase kehadiran (0-100%), serta status biner (0/1) untuk ekstrakurikuler.")
                 labels_siswa_plot = ["Rata-rata\nNilai Akademik", "Kehadiran (%)"] + [col.replace("Ekstrakurikuler ", "Ekskul\n") for col in CATEGORICAL_COLS]
                 values_siswa_plot_numeric = [
-                    siswa_data.get("Rata Rata Nilai Akademik", 0),
-                    float(str(siswa_data.get("Kehadiran", "0%")).replace('%',''))
+                siswa_data.get("Rata Rata Nilai Akademik", 0),
+                float(str(siswa_data.get("Kehadiran", "0%")).replace('%',''))
                 ]
                 values_siswa_plot_ekskul = [
-                    siswa_data.get(col, 0) * 100 for col in CATEGORICAL_COLS
+                siswa_data.get(col, 0) * 100 for col in CATEGORICAL_COLS
                 ]
                 values_siswa_plot = values_siswa_plot_numeric + values_siswa_plot_ekskul
                 fig, ax = plt.subplots(figsize=(10, 6))
@@ -1183,8 +1187,8 @@ def show_kepala_sekolah_page():
             st.markdown("---")
             st.subheader(f"Siswa Lain di Klaster {klaster_siswa_terpilih}:")
             siswa_lain_di_klaster = df_kepsek[
-                (df_kepsek['Klaster'] == klaster_siswa_terpilih) &
-                (df_kepsek['Nama'] != nama_terpilih_kepsek)
+            (df_kepsek['Klaster'] == klaster_siswa_terpilih) &
+            (df_kepsek['Nama'] != nama_terpilih_kepsek)
             ]
             if not siswa_lain_di_klaster.empty:
                 st.write("Berikut adalah daftar siswa lain yang juga tergolong dalam klaster ini:")
@@ -1201,20 +1205,20 @@ def show_kepala_sekolah_page():
                         if isinstance(siswa_data_for_pdf.get('Kehadiran'), str):
                             siswa_data_for_pdf['Kehadiran'] = float(siswa_data_for_pdf['Kehadiran'].replace('%', '')) / 100
                         pdf_data_bytes = generate_pdf_profil_siswa(
-                            nama_terpilih_kepsek,
-                            siswa_data_for_pdf,
-                            siswa_data["Klaster"],
-                            st.session_state.cluster_characteristics_map
+                        nama_terpilih_kepsek,
+                        siswa_data_for_pdf,
+                        siswa_data["Klaster"],
+                        st.session_state.cluster_characteristics_map
                         )
                         if pdf_data_bytes:
                             st.success("Laporan PDF berhasil disiapkan!")
                             st.download_button(
-                                label="Klik di Sini untuk Mengunduh PDF",
-                                data=pdf_data_bytes,
-                                file_name=f"Profil_{nama_terpilih_kepsek.replace(' ', '_')}.pdf",
-                                mime="application/pdf",
-                                key="download_profile_pdf_kepsek_final",
-                                help="Klik ini untuk menyimpan laporan PDF ke perangkat Anda."
+                            label="Klik di Sini untuk Mengunduh PDF",
+                            data=pdf_data_bytes,
+                            file_name=f"Profil_{nama_terpilih_kepsek.replace(' ', '_')}.pdf",
+                            mime="application/pdf",
+                            key="download_profile_pdf_kepsek_final",
+                            help="Klik ini untuk menyimpan laporan PDF ke perangkat Anda."
                             )
             else:
                 st.warning("Data klasterisasi tidak valid untuk membuat profil PDF.")
